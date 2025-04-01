@@ -23,18 +23,18 @@
     width: 170px;
 }
 
-.table .box-flex{
+.table .box-flex {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.table .box-32{
+.table .box-32 {
     width: 32px;
     height: 32px;
     aspect-ratio: 1;
     border-radius: 4px;
-    .material-symbols-outlined{
+    .material-symbols-outlined {
         padding: 0;
         margin: 0;
         font-size: 16px;
@@ -43,7 +43,7 @@
 
 .dt-paging {
     nav {
-        ul{
+        ul {
             display: flex;
             gap: 4px;
             justify-content: end;
@@ -54,7 +54,7 @@
                 border: $border;
                 font-size: 14px;
                 border-radius: 4px;
-                &:hover{
+                &:hover {
                     background: $text-color-secondary;
                     color: $primary-white;
                 }
@@ -73,7 +73,7 @@
             }
             .dt-paging-button.disabled {
                 cursor: not-allowed;
-                &:hover{
+                &:hover {
                     background: var(--bs-danger-light);
                     color: var(--bs-danger-light);
                 }
@@ -82,37 +82,37 @@
     }
 }
 
-.dt-length{
+.dt-length {
     display: flex;
     align-items: center;
     gap: 8px;
     width: 200px;
-    select{
+    select {
         width: fit-content;
     }
 }
 
-.dt-search{
+.dt-search {
     display: flex;
     align-items: center;
     gap: 8px;
     width: 200px;
 }
 
-.dt-orderable-asc.dt-orderable-desc.dt-ordering-asc{
+.dt-orderable-asc.dt-orderable-desc.dt-ordering-asc {
     display: flex;
 }
 
-.dt-orderable-asc.dt-orderable-desc.dt-ordering-desc{
+.dt-orderable-asc.dt-orderable-desc.dt-ordering-desc {
     display: flex;
 }
 
 .table {
-    thead{
-        tr{
-            th{
+    thead {
+        tr {
+            th {
                 text-wrap: nowrap;
-                span{
+                span {
                     text-wrap: nowrap;
                     text-transform: uppercase;
                     font-size: 12px;
@@ -123,9 +123,9 @@
             }
         }
     }
-    tbody{
-        tr{
-            td{
+    tbody {
+        tr {
+            td {
                 font-size: 14px;
                 line-height: 24px;
                 color: $text-color;
@@ -139,6 +139,16 @@
     margin-top: 20px !important;
 }
 
-.w-fc{
+.w-fc {
     width: fit-content !important;
+}
+
+.menu-arrow {
+    transition: transform 0.3s ease;
+}
+.rotate-90 {
+    transform: rotate(90deg);
+}
+.submenu {
+    transition: all 0.3s ease;
 }

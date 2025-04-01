@@ -327,13 +327,14 @@ ul {
                 .menu-item {
                     display: block;
                     padding: 0.15rem 0;
+                    margin: 8px 0;
                     .menu-link {
                         cursor: pointer;
                         display: flex;
                         align-items: center;
                         padding: 0;
                         flex: 0 0 100%;
-                        padding: 0.65rem 1rem;
+                        padding: 0.85rem 1rem;
                         transition: none;
                         outline: 0 !important;
 
@@ -355,6 +356,9 @@ ul {
                             font-size: 14px;
                             line-height: 20px;
                             font-weight: 500;
+                        }
+                        .menu-arrow {
+                            color: $primary-white;
                         }
 
                         &:hover .menu-title {
@@ -381,6 +385,42 @@ ul {
                             color: $primary-white;
                         }
                     }
+
+                    .submenu {
+                        transition: all 0.3s ease;
+                        .menu-link {
+                            color: $text-color;
+                            padding-left: 45px;
+                            margin: 8px 0;
+                            position: relative;
+                            &::after {
+                                width: 8px;
+                                position: absolute;
+                                aspect-ratio: 1;
+                                content: "";
+                                top: 16px;
+                                left: 24px;
+                                background-color: $text-color-secondary;
+                                border-radius: 50%;
+                            }
+                        }
+                        .menu-link.active {
+                            // background: linear-gradient(to right, #64b5ff, #d5ebff);
+                            background: $primary-white;
+                            border-radius: 4px;
+                            box-shadow: var(--bs-app-sidebar-base-menu-link-box-shadow-active);
+                            .menu-icon {
+                                .material-symbols-outlined {
+                                    color: $primary-white;
+                                    transition: 0.3s ease-in-out;
+                                }
+                            }
+
+                            .menu-title {
+                                color: $primary-color;
+                            }
+                        }
+                    }
                 }
             }
             .Mainbar {
@@ -402,4 +442,3 @@ ul {
         }
     }
 }
-

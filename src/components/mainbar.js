@@ -6,6 +6,10 @@ import Articles from "../pages/articles";
 import DownloadTools from "../pages/download_tools";
 import Coupons from "../pages/coupons";
 import CreateCoupons from "../pages/create_coupons";
+import Testimonials from "../pages/testimonials";
+import CoverageLogo from "../pages/coverage_logo";
+import Footer from "../pages/footer";
+import TrackRecord from "../pages/track_record";
 
 const Mainbar = () => {
     return (
@@ -23,6 +27,10 @@ const Mainbar = () => {
                                     <Route path="/download_tools" element={<DownloadTools />} />
                                     <Route path="/coupons" element={<Coupons />} />
                                     <Route path="/create_coupons" element={<CreateCoupons />} />
+                                    <Route path="/testimonials" element={<Testimonials />} />
+                                    <Route path="/coverage_logo" element={<CoverageLogo />} />
+                                    <Route path="/footer" element={<Footer />} />
+                                    <Route path="/track_record" element={<TrackRecord />} />
                                 </Routes>
                             {/* </div> */}
                         {/* </div>
