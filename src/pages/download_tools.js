@@ -13,31 +13,25 @@ const DownloadTools = () => {
   const [title] = useState("Download Tools");
   const [isChecked, setIsChecked] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [modalData, setModalData] = useState(null); // Store modal data here (if any)
+  const [modalData, setModalData] = useState(null); 
 
-  // Handle modal visibility
   const handleModalClose = () => setShowModal(false);
   const handleModalShow = () => setShowModal(true);
 
-  // Handle Add Tool (Trigger Modal Show)
   const handleAddLead = () => {
     setModalData({
       title: "Add New Download Tool",
       description: "",
-      // Any other data you want to pass initially
     });
-    handleModalShow(); // Show the modal
+    handleModalShow(); 
   };
 
-  // Handle Save of New Tool Data
   const handleSaveTool = (newToolData) => {
-    // Save logic here (e.g., call API, update local state, etc.)
     console.log("New Tool Data:", newToolData);
     toast.success("Download tool added successfully!");
-    handleModalClose(); // Close the modal after saving
+    handleModalClose(); 
   };
 
-  // Handle delete logic (example with Swal)
   const handleDelete = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -96,13 +90,12 @@ const DownloadTools = () => {
                   <div className="d-flex gap-3 justify-content-end">
                     <Button
                       text="Create"
-                      onClick={handleAddLead} // Trigger modal show
+                      onClick={handleAddLead} 
                       className="btn btn-light-success text-nowrap d-flex align-items-center gap-2"
                     >
                       <span className="material-symbols-outlined fs-4">add</span>
                     </Button>
 
-                    {/* Delete button only visible when items are selected */}
                     <Button
                       text="Delete All"
                       onClick={handleDelete}
@@ -120,17 +113,15 @@ const DownloadTools = () => {
         </div>
 
         <div className="mt-5">
-          {/* Pass the setIsChecked prop to handle checkbox selection */}
           <DownloadToolsDatatable setIsChecked={setIsChecked} />
         </div>
       </section>
 
-      {/* Render the modal to add new download tool */}
       <DownloadToolModal
         showModal={showModal}
         handleClose={handleModalClose}
-        handleSave={handleSaveTool} // Passing the save logic to the modal
-        modalData={modalData} // Passing initial modal data (if any)
+        handleSave={handleSaveTool} 
+        modalData={modalData} 
       />
     </>
   );

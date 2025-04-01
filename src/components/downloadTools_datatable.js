@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import $ from "jquery";
 import "datatables.net-bs5";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const DownloadToolsDatatable = ({ setIsChecked }) => {
     const [selectAll, setSelectAll] = useState(false);
@@ -9,25 +13,53 @@ const DownloadToolsDatatable = ({ setIsChecked }) => {
         $("#dataTable").DataTable();
     }, []);
 
-    // Handle "Select All" checkbox change
-    const handleSelectAllChange = (e) => {
-        const checked = e.target.checked;
-        setSelectAll(checked); // Update state for Select All checkbox
-        const checkboxes = document.querySelectorAll(".select-checkbox");
-        checkboxes.forEach((checkbox) => {
-            checkbox.checked = checked; // Check all individual checkboxes
+    const handleDelete = () => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                toast.success("Article deleted successfully.");
+                Swal.fire("Deleted!", "Article has been deleted.", "success");
+            }
         });
-        setIsChecked(checked); // Update parent state
     };
 
-    // Handle individual checkbox change
+
+    const handleSwitchChange = () => {
+        toast.success("The status has been updated successfully.", {
+            position: "top-right",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    };
+
+    const handleSelectAllChange = (e) => {
+        const checked = e.target.checked;
+        setSelectAll(checked);
+        const checkboxes = document.querySelectorAll(".select-checkbox");
+        checkboxes.forEach((checkbox) => {
+            checkbox.checked = checked;
+        });
+        setIsChecked(checked);
+    };
+
     const handleCheckboxChange = (e) => {
         const checkboxes = document.querySelectorAll(".select-checkbox");
         const totalCheckboxes = checkboxes.length;
         const checkedCheckboxes = [...checkboxes].filter((checkbox) => checkbox.checked).length;
-        
-        setSelectAll(checkedCheckboxes === totalCheckboxes); // Update Select All checkbox
-        setIsChecked(checkedCheckboxes > 0); // Update visibility of Delete All button
+
+        setSelectAll(checkedCheckboxes === totalCheckboxes);
+        setIsChecked(checkedCheckboxes > 0);
     };
 
     return (
@@ -86,6 +118,7 @@ const DownloadToolsDatatable = ({ setIsChecked }) => {
                                             type="checkbox"
                                             id={`switch-${index}-1`}
                                             defaultChecked={index % 2 === 0}
+                                            onChange={handleSwitchChange}
                                         />
                                     </div>
                                 </td>
@@ -98,7 +131,7 @@ const DownloadToolsDatatable = ({ setIsChecked }) => {
                                     <button className="btn btn-light-primary btn-sm box-flex box-32">
                                         <span className="material-symbols-outlined">edit</span>
                                     </button>
-                                    <button className="btn btn-light-danger btn-sm box-flex box-32">
+                                    <button className="btn btn-light-danger btn-sm box-flex box-32" onClick={handleDelete}>
                                         <span className="material-symbols-outlined">delete</span>
                                     </button>
                                 </td>
