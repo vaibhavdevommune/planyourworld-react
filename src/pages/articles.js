@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import Button from "../components/button";
 import DatePicker from "../components/flatpickr";
-import LeadDatable from "../components/article_datatable";
+import ArticleDataTable from "../components/ArticleDataTable";
 
 const Articles = () => {
-    const [title, setTitle] = useState("Articles");
+    const [title] = useState("Articles");
 
     const handleAddLead = () => {
         alert("Export btn Clicked!");
@@ -68,7 +68,7 @@ const Articles = () => {
                 </div>
 
                 <div className="mt-10">
-                    <LeadDatable />
+                    <ArticleDataTable />
                 </div>
             </section >
         </>

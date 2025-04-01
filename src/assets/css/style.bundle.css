@@ -34042,14 +34042,6 @@ textarea.form-control-lg {
     --bs-warning-light: #FFF8DD;
     --bs-danger-light: #FFEEF3;
     --bs-dark-light: #F9F9F9;
-    --bs-light-light: #ffffff;
-    --bs-primary-inverse: #ffffff;
-    --bs-secondary-inverse: #252F4A;
-    --bs-light-inverse: #252F4A;
-    --bs-success-inverse: #ffffff;
-    --bs-warning-inverse: #ffffff;
-    --bs-danger-inverse: #ffffff;
-    --bs-dark-inverse: #ffffff;
     
     --bs-primary-clarity: rgba(27, 132, 255, 0.2);
     --bs-secondary-clarity: rgba(249, 249, 249, 0.2);
@@ -34195,14 +34187,14 @@ textarea.form-control-lg {
     --bs-warning-active: #D9AA00;
     --bs-danger-active: #FF3767;
     --bs-dark-active: #2D2F39;
-    --bs-primary-light: #172331;
+    /* --bs-primary-light: #172331;
     --bs-secondary-light: #363843;
     --bs-success-light: #1F212A;
     --bs-info-light: #272134;
     --bs-warning-light: #242320;
     --bs-danger-light: #302024;
     --bs-dark-light: #1E2027;
-    --bs-light-light: #1F212A;
+    --bs-light-light: #1F212A; */
     --bs-primary-inverse: #ffffff;
     --bs-secondary-inverse: #ffffff;
     --bs-light-inverse: #808290;
@@ -40037,7 +40029,7 @@ textarea.form-control-lg {
 .btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon):not(.btn-hover-outline) {
     border: 0;
     /* padding: calc(.775rem + 1px) calc(1.5rem + 1px) */
-    padding: calc(0.775rem + 1px) calc(0.8rem + 1px);
+    padding: calc(0.675rem + 1px) calc(0.8rem + 1px);
 }
 
 .btn-group-lg>.btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon):not(.btn-hover-outline),.btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon):not(.btn-hover-outline).btn-lg {
@@ -40551,7 +40543,8 @@ textarea.form-control-lg {
 }
 
 .btn-check:active+.btn.btn-light-success,.btn-check:checked+.btn.btn-light-success,.btn.btn-light-success.active,.btn.btn-light-success.show,.btn.btn-light-success:active:not(.btn-active),.btn.btn-light-success:focus:not(.btn-active),.btn.btn-light-success:hover:not(.btn-active),.show>.btn.btn-light-success {
-    color: var(--bs-success-inverse);
+    /* color: var(--bs-success-inverse); */
+    color: var(--bs-white);
     border-color: var(--bs-success);
     background-color: var(--bs-success)!important
 }

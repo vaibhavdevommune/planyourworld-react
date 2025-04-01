@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/button";
 import DatePicker from "../components/flatpickr";
-import LeadDatable from "../components/lead_datatables";
+import LeadDatable from "../components/LeadDataTable";
 
 
 const Lead = () => {
-    const [title, setTitle] = useState("Leads");
+    const [title] = useState("Leads");
 
     const handleAddLead = () => {
         alert("Export btn Clicked!");

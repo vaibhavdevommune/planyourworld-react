@@ -50,6 +50,17 @@ const Sidebar = () => {
                             Download Tools
                         </div>
                     </Link>
+
+                    <Link to="/coupons" className={`menu-link ${location.pathname === "/coupons" || location.pathname === "/create_coupons"  ? "active" : ""}`}>
+                        <div className="menu-icon">
+                            <span className="material-symbols-outlined">
+                                editor_choice
+                            </span>
+                        </div>
+                        <div className="menu-title">
+                            Coupons
+                        </div>
+                    </Link>
                 </div>
             </section>
         </>
