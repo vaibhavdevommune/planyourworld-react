@@ -1,0 +1,128 @@
+@import "main";
+
+.w-120px {
+    width: 120px;
+}
+
+.has-icon {
+    position: relative;
+    .on-left {
+        position: absolute;
+        left: 8px;
+        top: 10px;
+        font-size: 20px;
+        color: $text-color-secondary;
+    }
+
+    input {
+        padding: 10px 16px 10px 32px;
+    }
+}
+
+.w-170px {
+    width: 170px;
+}
+
+.table .box-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table .box-32{
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    .material-symbols-outlined{
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+    }
+}
+
+.dt-paging {
+    nav {
+        ul{
+            display: flex;
+            gap: 4px;
+            justify-content: end;
+            .dt-paging-button {
+                width: 32px;
+                aspect-ratio: 1;
+                background-color: $primary-white;
+                border: $border;
+                font-size: 14px;
+                border-radius: 4px;
+                &:hover{
+                    background: $text-color-secondary;
+                    color: $primary-white;
+                }
+            }
+            .dt-paging-button {
+                width: 32px;
+                aspect-ratio: 1;
+                background-color: $primary-white;
+                border: $border;
+                font-size: 14px;
+                border-radius: 4px;
+            }
+            .dt-paging-button.active {
+                color: $primary-white;
+                background-color: $primary-color;
+            }
+            .dt-paging-button.disabled {
+                cursor: not-allowed;
+                &:hover{
+                    background: var(--bs-danger-light);
+                    color: var(--bs-danger-light);
+                }
+            }
+        }
+    }
+}
+
+.dt-length{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 200px;
+    select{
+        width: fit-content;
+    }
+}
+
+.dt-search{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 200px;
+}
+
+.table{
+    thead{
+        tr{
+            th{
+                text-wrap: nowrap;
+                span{
+                    text-wrap: nowrap;
+                    text-transform: uppercase;
+                    font-size: 12px;
+                    color: $text-color-secondary;
+                    font-weight: 600;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                font-size: 14px;
+                line-height: 24px;
+                color: $text-color;
+                vertical-align: middle;
+            }
+        }
+    }
+}
