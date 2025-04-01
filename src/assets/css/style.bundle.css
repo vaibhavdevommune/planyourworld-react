@@ -34047,10 +34047,10 @@ textarea.form-control-lg {
     --bs-secondary-inverse: #252F4A;
     --bs-light-inverse: #252F4A;
     --bs-success-inverse: #ffffff;
-    --bs-info-inverse: #ffffff;
     --bs-warning-inverse: #ffffff;
     --bs-danger-inverse: #ffffff;
     --bs-dark-inverse: #ffffff;
+    
     --bs-primary-clarity: rgba(27, 132, 255, 0.2);
     --bs-secondary-clarity: rgba(249, 249, 249, 0.2);
     --bs-success-clarity: rgba(23, 198, 83, 0.2);
@@ -40668,7 +40668,8 @@ textarea.form-control-lg {
 }
 
 .btn-check:active+.btn.btn-light-info,.btn-check:checked+.btn.btn-light-info,.btn.btn-light-info.active,.btn.btn-light-info.show,.btn.btn-light-info:active:not(.btn-active),.btn.btn-light-info:focus:not(.btn-active),.btn.btn-light-info:hover:not(.btn-active),.show>.btn.btn-light-info {
-    color: var(--bs-info-inverse);
+    /* color: var(--bs-info-inverse); */
+    color: var(--bs-white);
     border-color: var(--bs-info);
     background-color: var(--bs-info)!important
 }

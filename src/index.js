@@ -11,6 +11,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 // import "datatables.net-dt/css/jquery.dataTables.min.css";
 import "datatables.net-bs5";
 import "datatables.net";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./assets/scss/global.scss"; 
 import "./assets/scss/main.scss";
 import "./assets/css/plugins.bundle.css";
@@ -25,6 +27,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
+      <ToastContainer position="top-right" autoClose={1500} />
     </BrowserRouter>
   </React.StrictMode>
 );

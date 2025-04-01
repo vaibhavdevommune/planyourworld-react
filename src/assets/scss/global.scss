@@ -99,7 +99,15 @@
     width: 200px;
 }
 
-.table{
+.dt-orderable-asc.dt-orderable-desc.dt-ordering-asc{
+    display: flex;
+}
+
+.dt-orderable-asc.dt-orderable-desc.dt-ordering-desc{
+    display: flex;
+}
+
+.table {
     thead{
         tr{
             th{
@@ -125,4 +133,8 @@
             }
         }
     }
+}
+
+.table {
+    margin-top: 20px !important;
 }

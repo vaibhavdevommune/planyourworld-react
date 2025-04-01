@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/button";
 import DatePicker from "../components/flatpickr";
@@ -6,6 +6,8 @@ import LeadDatable from "../components/lead_datatables";
 
 
 const Lead = () => {
+    const [title, setTitle] = useState("Leads");
+
     const handleAddLead = () => {
         alert("Export btn Clicked!");
     };
@@ -17,14 +19,14 @@ const Lead = () => {
                     <div className="col-md-12 d-flex justify-content-between align-items-center">
                         <div className="col-12 col-sm-5 col-md-5 col-lg-4">
                             <div className="title">
-                                <h2>Leads</h2>
+                                <h2>{title}</h2>
                             </div>
                             <ol className="breadcrumb breadcrumb-line text-muted fs-6 fw-semibold">
                                 <li className="breadcrumb-item">
                                     <Link to="/dashboard">Dashboard</Link>
                                 </li>
                                 <li className="breadcrumb-item">
-                                    <Link to="#">Leads</Link>
+                                    <Link to="#">{title}</Link>
                                 </li>
                                 <li className="breadcrumb-item text-muted">List</li>
                             </ol>
