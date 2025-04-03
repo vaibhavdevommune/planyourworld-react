@@ -3,7 +3,7 @@ import $ from "jquery";
 // import "datatables.net-dt/css/jquery.dataTables.min.css";
 import "datatables.net-bs5";
 
-const DataTableComponent = () => {
+const LeadDataTable = () => {
   useEffect(() => {
     $("#dataTable").DataTable();
   }, []);
@@ -49,4 +49,4 @@ const DataTableComponent = () => {
   );
 };
 
-export default DataTableComponent;
+export default LeadDataTable;

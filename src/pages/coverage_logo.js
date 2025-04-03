@@ -1,16 +1,87 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../components/button";
-import DatePicker from "../components/flatpickr";
-import LeadDatable from "../components/LeadDataTable";
-
+import CoverageLogoDataTable from "../components/CoverageLogoDataTable";
+import Swal from "sweetalert2";
+import Modal from "../components/modal";
+import { Form, Row, Col } from "react-bootstrap";
 
 const CoverageAndLogo = () => {
     const [title] = useState("Coverage And Logo");
+    const [showModal, setShowModal] = useState(false);
 
-    const handleAddLead = () => {
-        alert("Export btn Clicked!");
+    const handleSave = async (formData) => {
+        const formDataToSend = new FormData();
+        Object.keys(formData).forEach((key) => {
+            formDataToSend.append(key, formData[key]);
+        });
+
+        try {
+            const response = await fetch("YOUR_API_ENDPOINT/coverageLogo", {
+                method: "POST",
+                body: formDataToSend,
+            });
+
+            if (response.ok) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Coverage Logo Created",
+                    text: "Your Coverage Logo has been successfully created!",
+                });
+                setShowModal(false);
+            } else {
+                throw new Error("Failed to create Coverage Logo");
+            }
+        } catch (error) {
+            Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "There was an error creating the Coverage Logo.",
+            });
+        }
     };
+
+    const renderTestimonialForm = ({ formData, handleChange, imagePreview }) => (
+        <Row>
+            <Col sm={6}>
+                <Form.Group className="mb-3">
+                    <Form.Label>Select media option</Form.Label>
+                    <Form.Select aria-label="Default select example" value={formData.name || ""}
+                        onChange={handleChange}
+                        required>
+                        <option selected>Select media option</option>
+                        <option value="Coverage">Coverage</option>
+                        <option value="Logo">Logo</option>
+                    </Form.Select>
+                </Form.Group>
+            </Col>
+
+            <Col sm={6}>
+                <Form.Group className="mb-3">
+                    <Form.Label>Media Picture</Form.Label>
+                    <Form.Control
+                        type="file"
+                        name="mediaPicture"
+                        accept="image/*"
+                        onChange={handleChange}
+                        required={!formData.mediaPicture}
+                    />
+                </Form.Group>
+            </Col>
+
+            <Col sm={12}>
+                <div id="preview-media">
+                {imagePreview ? (
+            <img
+              src={imagePreview}
+              alt="Media Preview" className="img_preview"
+            />
+          ) : (
+            <p>No image selected</p>
+          )}
+                </div>
+            </Col>
+        </Row>
+    );
 
     return (
         <>
@@ -28,62 +99,31 @@ const CoverageAndLogo = () => {
                                 <li className="breadcrumb-item">
                                     <Link to="#">{title}</Link>
                                 </li>
-                                <li className="breadcrumb-item text-muted">List</li>
+                                <li className="breadcrumb-item text-color-secondary">List</li>
                             </ol>
                         </div>
 
                         <div className="col-12 col-sm-7 col-md-7 col-lg-8 text-end">
                             <div className="d-flex align-items-center gap-3 justify-content-end">
-                                <div className="col-4">
-                                    <div className="has-icon">
-                                        <span className="material-symbols-outlined on-left">
-                                            search
-                                        </span>
-                                        <input type="text" placeholder="Enter Course Name" className="form-control" />
-                                    </div>
-                                </div>
-
-                                <div className="col-4">
-                                    <DatePicker />
-                                </div>
-
                                 <div className="col-1">
-                                    <Button text="Export" onClick={handleAddLead} className="btn btn-light-success" hidden>
-                                    </Button>
+                                    <button onClick={() => setShowModal(true)} className="btn btn-light-success text-nowrap d-flex align-items-center gap-2">
+                                        <span className="material-symbols-outlined fs-4">add</span>
+                                        Create
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="d-xl-flex align-items--xl-center justify-content-xl-between mt-10">
-                    <div class="btn-group my-xl-0 my-2" role="group" aria-label="Basic example ">
-                        <button type="button" class="btn btn-light-primary">ALL PENDING</button>
-                        <button type="button" class="btn btn-light-primary">HOLD</button>
-                    </div>
-                    <div class="btn-group my-xl-0 my-2" role="group" aria-label="Basic example ">
-                        <button type="button" class="btn btn-light-primary">AUTH</button>
-                        <button type="button" class="btn btn-light-primary">REF</button>
-                    </div>
-                    <div class="btn-group my-xl-0 my-2" role="group" aria-label="Basic example ">
-                        <button type="button" class="btn btn-light-primary">ALL LEADS</button>
-                        <button type="button" class="btn btn-light-primary">BKG</button>
-                        <button type="button" class="btn btn-light-primary">ABD</button>
-                    </div>
-                    <div class="btn-group my-xl-0 my-2" role="group" aria-label="Basic example ">
-                        <button type="button" class="btn btn-light-warning">CNG REV</button>
-                    </div>
-                    <div class="btn-group my-xl-0 my-2" role="group" aria-label="Basic example ">
-                        <button type="button" class="btn btn-light-primary">CHRG</button>
-                        <button type="button" class="btn btn-light-primary">CBC</button>
-                        <button type="button" class="btn btn-light-primary">CBV</button>
-                    </div>
-                </div>
-
-                <div className="mt-5">
-                    <LeadDatable />
+                <div className="mt-10">
+                    <CoverageLogoDataTable />
                 </div>
             </section >
+
+            <Modal showModal={showModal} handleClose={() => setShowModal(false)} handleSave={handleSave} title="Create New Testimonial">
+                {renderTestimonialForm}
+            </Modal>
         </>
     );
 };

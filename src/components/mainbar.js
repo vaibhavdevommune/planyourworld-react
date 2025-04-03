@@ -10,6 +10,7 @@ import Testimonials from "../pages/testimonials";
 import CoverageLogo from "../pages/coverage_logo";
 import Footer from "../pages/footer";
 import TrackRecord from "../pages/track_record";
+import CreateTestinomial from "../pages/create_testimonial";
 
 const Mainbar = () => {
     return (
@@ -28,6 +29,7 @@ const Mainbar = () => {
                                     <Route path="/coupons" element={<Coupons />} />
                                     <Route path="/create_coupons" element={<CreateCoupons />} />
                                     <Route path="/testimonials" element={<Testimonials />} />
+                                    <Route path="/create_testimonial" element={<CreateTestinomial />} />
                                     <Route path="/coverage_logo" element={<CoverageLogo />} />
                                     <Route path="/footer" element={<Footer />} />
                                     <Route path="/track_record" element={<TrackRecord />} />

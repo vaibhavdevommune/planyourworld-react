@@ -152,3 +152,64 @@
 .submenu {
     transition: all 0.3s ease;
 }
+
+.coveragelogo-media {
+    width: 32px;
+    aspect-ratio: 1;
+    border-radius: 4px;
+}
+
+.img_preview {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+}
+
+.box-32 {
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    .material-symbols-outlined {
+        font-size: 20px;
+    }
+}
+
+.flex-box {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item-row {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.menu-item-row:not(.fade-in-scale):not(.fade-out) {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Initial state for new items */
+  .menu-item-row.fade-in-scale {
+    animation: fadeInScale 0.3s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95); /* Start slightly smaller */
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }

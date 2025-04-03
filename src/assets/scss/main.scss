@@ -327,7 +327,7 @@ ul {
                 .menu-item {
                     display: block;
                     padding: 0.15rem 0;
-                    margin: 8px 0;
+                    // margin: 8px 0;
                     .menu-link {
                         cursor: pointer;
                         display: flex;
@@ -391,7 +391,7 @@ ul {
                         .menu-link {
                             color: $text-color;
                             padding-left: 45px;
-                            margin: 8px 0;
+                            // margin: 8px 0;
                             position: relative;
                             &::after {
                                 width: 8px;
@@ -436,6 +436,39 @@ ul {
                     .base {
                         font-size: 12px;
                         color: $text-color-secondary;
+                    }
+                }
+                .testimonials {
+                    .excerpt-hidden {
+                        height: 60px;
+                        overflow: hidden;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 64px;
+                            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, white 100%);
+                        }
+                    }
+                }
+
+                .footer {
+                    .footerContent {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px;
+                        .card {
+                            .card-body {
+                                #menu-items {
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 16px;
+                                }
+                            }
+                        }
                     }
                 }
             }

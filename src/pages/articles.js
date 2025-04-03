@@ -27,7 +27,7 @@ const Articles = () => {
                                 <li className="breadcrumb-item">
                                     <Link to="#">{title}</Link>
                                 </li>
-                                <li className="breadcrumb-item text-muted">List</li>
+                                <li className="breadcrumb-item text-color-secondary">List</li>
                             </ol>
                         </div>
 
