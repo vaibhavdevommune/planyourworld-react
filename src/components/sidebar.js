@@ -93,6 +93,13 @@ const Sidebar = () => {
                         </Link>
                     </div>
                 </div>
+
+                <Link to="/products" className={`menu-link ${location.pathname === "/products" || location.pathname === "/create_products" ? "active" : ""}`}>
+                    <div className="menu-icon">
+                        <span className="material-symbols-outlined">editor_choice</span>
+                    </div>
+                    <div className="menu-title">Products</div>
+                </Link>
             </div>
         </section>
     );

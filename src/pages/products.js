@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import CouponsDataTable from "../components/CouponsDataTable";
+import Button from "../components/button";
+import DatePicker from "../components/flatpickr";
+import ProductsDataTable from "../components/ProductsDataTable";
 
-const Coupons = () => {
-    const [title] = useState("Coupons");
+
+const Products = () => {
+    const [title] = useState("Products");
+
+    const handleAddLead = () => {
+        alert("Export btn Clicked!");
+    };
+
     return (
         <>
-            <section className="coupons">
+            <section className="leads">
                 <div className="row">
                     <div className="col-md-12 d-flex justify-content-between align-items-center">
                         <div className="col-12 col-sm-5 col-md-5 col-lg-4">
@@ -24,23 +32,25 @@ const Coupons = () => {
                             </ol>
                         </div>
 
-                        <div className="col-12 col-sm-7 col-md-7 col-lg-8 d-flex justify-content-end">
-                            <Link to='/create_coupons' className="btn btn-light-success text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
-                                <span class="material-symbols-outlined fs-4">
-                                    add
-                                </span>
-                                Create
-                            </Link>
+                        <div className="col-12 col-sm-7 col-md-7 col-lg-8 text-end">
+                            <div className="d-flex align-items-center gap-3 justify-content-end">
+                                <Link to='/create_coupons' className="btn btn-light-success text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
+                                    <span class="material-symbols-outlined fs-4">
+                                        add
+                                    </span>
+                                    Create
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="mt-5">
-                    <CouponsDataTable />
+                    <ProductsDataTable />
                 </div>
             </section >
         </>
     );
 };
 
-export default Coupons;
+export default Products;

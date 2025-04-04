@@ -11,6 +11,7 @@ import CoverageLogo from "../pages/coverage_logo";
 import Footer from "../pages/footer";
 import TrackRecord from "../pages/track_record";
 import CreateTestinomial from "../pages/create_testimonial";
+import Products from "../pages/products";
 
 const Mainbar = () => {
     return (
@@ -33,6 +34,7 @@ const Mainbar = () => {
                                     <Route path="/coverage_logo" element={<CoverageLogo />} />
                                     <Route path="/footer" element={<Footer />} />
                                     <Route path="/track_record" element={<TrackRecord />} />
+                                    <Route path="/products" element={<Products />} />
                                 </Routes>
                             {/* </div> */}
                         {/* </div>

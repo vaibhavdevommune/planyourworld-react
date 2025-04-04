@@ -5,7 +5,6 @@ import { Row, Col, Form, Button } from "react-bootstrap";
 const Footer = () => {
   const [title] = useState("Footer");
 
-  // Separate state for each menu
   const [menu1Items, setMenu1Items] = useState([
     { id: Date.now(), name: "", link: "", isActive: false, isNew: true },
   ]);
@@ -86,7 +85,7 @@ const Footer = () => {
         <div className="d-flex justify-content-between align-items-center w-100">
           <h4>Menu {menuNum}</h4>
           <div className="d-flex gap-4 align-items-center">
-            <Form.Check type="switch" id={`custom-switch-header-${menuNum}`} label="" />
+            <Form.Check className="form-check-success" type="switch" id={`custom-switch-header-${menuNum}`} label="" />
           </div>
         </div>
       </div>

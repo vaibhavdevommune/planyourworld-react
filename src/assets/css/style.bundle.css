@@ -39555,8 +39555,8 @@ textarea.form-control-lg {
     justify-content: space-between;
     align-items: stretch;
     flex-wrap: wrap;
-    min-height: 70px;
-    padding: 0 2.25rem;
+    /* min-height: 70px; */
+    padding: 12px 2.25rem;
     color: var(--bs-card-cap-color);
     background-color: var(--bs-card-cap-bg);
     border-bottom: 1px solid var(--bs-card-border-color)

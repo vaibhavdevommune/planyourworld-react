@@ -196,20 +196,26 @@
 .menu-item-row:not(.fade-in-scale):not(.fade-out) {
     opacity: 1;
     transform: scale(1);
-  }
-  
-  /* Initial state for new items */
-  .menu-item-row.fade-in-scale {
+}
+
+/* Initial state for new items */
+.menu-item-row.fade-in-scale {
     animation: fadeInScale 0.3s ease-in-out forwards;
-  }
-  
-  @keyframes fadeInScale {
+}
+
+@keyframes fadeInScale {
     from {
-      opacity: 0;
-      transform: scale(0.95); /* Start slightly smaller */
+        opacity: 0;
+        transform: scale(0.95); /* Start slightly smaller */
     }
     to {
-      opacity: 1;
-      transform: scale(1);
+        opacity: 1;
+        transform: scale(1);
     }
-  }
+}
+
+.productimg {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 16px;
+}
