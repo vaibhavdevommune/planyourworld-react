@@ -35,19 +35,24 @@ const HeroSection = () => {
             autoClose: 1500,
         });
     };
-
     return (
         <section className="aboutsale">
             <Container>
                 <div className="page-card">
-                    <h3 className="fw-semibold">{title}</h3>
+                    <div className="d-flex align-items-center justify-content-between">
+                        <h3 className="fw-semibold mb-0">{title}</h3>
+                        <Form.Check className="form-check-success form-check-solid"
+                            type="switch"
+                            id="custom-switch"
+                        />
+                    </div>
 
                     {[{ label: "Title 1 (18px)", state: title1, setter: setTitle1 },
                     { label: "Title 2 (74px) (Main)", state: title2, setter: setTitle2 },
                     { label: "Title 3 (42px)", state: title3, setter: setTitle3 },
                     { label: "Title 4 (24px)", state: title4, setter: setTitle4 }].map((item, idx) => (
                         <Row key={idx} className="align-items-center mb-3">
-                            <Col sm={3}><label>{item.label} sddd</label></Col>
+                            <Col sm={3}><label>{item.label}</label></Col>
                             <Col sm={9}>
                                 <input
                                     type="text"
@@ -228,7 +233,7 @@ const HeroSection = () => {
                     <Row className="align-items-center mb-3">
                         <Col sm={3}><label className="text-color">Sales Date & Time</label></Col>
                         <Col sm={9}>
-                            <DatePicker className="form-control form-control-solid"/>
+                            <DatePicker className="form-control form-control-solid" />
                         </Col>
                     </Row>
 

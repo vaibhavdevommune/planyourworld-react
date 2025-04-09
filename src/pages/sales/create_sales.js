@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import AboutSales from "./rest_pages/about_sales";
 import HeroSection from "./rest_pages/hero_section";
+import YouWillLearn from "./rest_pages/you_will_learn";
 import ArticlesDetails from "./rest_pages/articles_details";
 
 const CreateSales = () => {
@@ -114,7 +115,7 @@ const CreateSales = () => {
                                         <HeroSection />
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="will_learn" className="fade">
-                                        <ArticlesDetails />
+                                        <YouWillLearn />
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="ViplavExpertise" className="fade">
                                         <ArticlesDetails />
