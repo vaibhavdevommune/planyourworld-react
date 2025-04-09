@@ -96,9 +96,23 @@ const Sidebar = () => {
 
                 <Link to="/products" className={`menu-link ${location.pathname === "/products" || location.pathname === "/create_products" ? "active" : ""}`}>
                     <div className="menu-icon">
-                        <span className="material-symbols-outlined">editor_choice</span>
+                        <span className="material-symbols-outlined">production_quantity_limits</span>
                     </div>
                     <div className="menu-title">Products</div>
+                </Link>
+                
+                <Link to="/advertisements" className={`menu-link ${location.pathname === "/advertisements" || location.pathname === "/create_products" ? "active" : ""}`}>
+                    <div className="menu-icon">
+                        <span className="material-symbols-outlined">category</span>
+                    </div>
+                    <div className="menu-title">Advertisements</div>
+                </Link>
+                
+                <Link to="/sales" className={`menu-link ${location.pathname === "/sales" || location.pathname === "/create_sales"  ? "active" : ""}`}>
+                    <div className="menu-icon">
+                        <span className="material-symbols-outlined">paid</span>
+                    </div>
+                    <div className="menu-title">Sales</div>
                 </Link>
             </div>
         </section>

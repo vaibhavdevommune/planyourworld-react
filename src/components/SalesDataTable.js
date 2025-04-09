@@ -1,0 +1,149 @@
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import $ from "jquery";
+import "datatables.net-bs5";
+import Swal from "sweetalert2";
+import "react-toastify/dist/ReactToastify.css";
+
+const SalesDataTable = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    useEffect(() => {
+        $("#dataTable").DataTable();
+    }, []);
+
+    const handleSwitchChange = () => {
+        toast.success("The status has been updated successfully.", {
+            position: "top-right",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    };
+
+    const handleDelete = () => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                toast.success("Article deleted successfully.");
+                Swal.fire("Deleted!", "Article has been deleted.", "success");
+            }
+        });
+    };
+
+
+    return (
+        <div className="table-responsive">
+            <table id="dataTable" className="table table-striped">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Thumbnail</th>
+                        <th>Sales Name</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Discount Price</th>
+                        <th>Status</th>
+                        <th>Featured</th>
+                        <th>Date Created</th>
+                        <th>Creator Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {Array.from({ length: 25 }).map((_, index) => (
+                        <tr key={index} className="text-nowrap">
+                            <td>{index + 1}</td>
+                            <td>
+                                <img
+                                    src={`https://placehold.co/400`}
+                                    alt="Item"
+                                    className="coveragelogo-media cursor-pointer"
+                                    onClick={() => setSelectedImage(`https://placehold.co/400`)}
+                                />
+                            </td>
+                            <td>Money IQ + {index}</td>
+                            <td>{index % 2 !== 0 ? "Live" : "Recorded"}</td>
+                            <td>
+                                <p className="btn btn-outline btn-outline-dashed p-1 px-2 fw-normal btn-outline-primary btn-active-light-primary">
+                                    {index % 3 === 0 ? "Holi Offer" : (index % 2 === 0 ? "Diwali Offer" : "New Year Offer")}
+                                </p>
+                            </td>
+                            <td>2025-03-{(index % 30) + 1}</td>
+                            <td>{999 + index}</td>
+                            <td>
+                                <div className="form-check form-switch form-check-custom form-check-solid">
+                                    <input
+                                        className="form-check-input h-20px w-40px"
+                                        type="checkbox"
+                                        id={`switch-${index}-2`}
+                                        defaultChecked={index % 2 === 0}
+                                        onChange={handleSwitchChange}
+                                    />
+                                </div>
+                            </td>
+                            <td>
+                                <div className="form-check form-switch form-check-custom form-check-solid">
+                                    <input
+                                        className="form-check-input h-20px w-40px"
+                                        type="checkbox"
+                                        id={`switch-${index}-1`}
+                                        defaultChecked={index % 2 === 1}
+                                        onChange={handleSwitchChange}
+                                    />
+                                </div>
+                            </td>
+                            <td>2025-03-{(index % 30) + 1}</td>
+                            <td>
+                                <p className={`badge ${index % 3 === 0 ? "badge-light-success" : (index % 2 === 0 ? "badge-light-warning" : "badge-light-danger")}`}>
+                                    {index % 3 === 0 ? "admin@admin.com" : (index % 2 === 0 ? "admin@gmail.com" : "admin@admin2.com")}
+                                </p>
+
+                            </td>
+                            <td className="d-flex align-items-center gap-3">
+                                <button className="btn btn-light-primary btn-sm box-flex box-32">
+                                    <span className="material-symbols-outlined">edit</span>
+                                </button>
+                                <button className="btn btn-light-danger btn-sm box-flex box-32" onClick={handleDelete}>
+                                    <span className="material-symbols-outlined">delete</span>
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+
+            </table>
+
+            {selectedImage && (
+                <div
+                    className="modal fade show d-block"
+                    tabIndex="-1"
+                    style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <div className="modal-dialog modal-dialog-centered" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-content">
+                            <div className="modal-body p-0">
+                                <img src={selectedImage} alt="Popup" className="productimg" />
+                            </div>
+                            <button type="button" className="btn-close position-absolute top-0 end-0 m-2" onClick={() => setSelectedImage(null)}></button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default SalesDataTable;

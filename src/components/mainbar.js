@@ -10,8 +10,13 @@ import Testimonials from "../pages/testimonials";
 import CoverageLogo from "../pages/coverage_logo";
 import Footer from "../pages/footer";
 import TrackRecord from "../pages/track_record";
-import CreateTestinomial from "../pages/create_testimonial";
+import CreateTestimonial from "../pages/create_testimonial";
 import Products from "../pages/products";
+import CreateProducts from "../pages/create_product";
+import Advertisements from "../pages/advertisements/index";
+import Sales from "../pages/sales/index";
+import CreateSales from "../pages/sales/create_sales";
+import AboutSales from "../pages/sales/rest_pages/about_sales";
 
 const Mainbar = () => {
     return (
@@ -30,11 +35,16 @@ const Mainbar = () => {
                                     <Route path="/coupons" element={<Coupons />} />
                                     <Route path="/create_coupons" element={<CreateCoupons />} />
                                     <Route path="/testimonials" element={<Testimonials />} />
-                                    <Route path="/create_testimonial" element={<CreateTestinomial />} />
+                                    <Route path="/create_testimonial" element={<CreateTestimonial />} />
                                     <Route path="/coverage_logo" element={<CoverageLogo />} />
                                     <Route path="/footer" element={<Footer />} />
                                     <Route path="/track_record" element={<TrackRecord />} />
                                     <Route path="/products" element={<Products />} />
+                                    <Route path="/create_products" element={<CreateProducts />} />
+                                    <Route path="/advertisements" element={<Advertisements />} />
+                                    <Route path="/sales" element={<Sales />} />
+                                    <Route path="/create_sales" element={<CreateSales />} />
+                                    <Route path="/about_sales" element={<AboutSales />} />
                                 </Routes>
                             {/* </div> */}
                         {/* </div>

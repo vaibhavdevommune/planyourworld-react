@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Form, Card, Button } from "react-bootstrap";
+import { Row, Col, Form, Card } from "react-bootstrap";
 
 const TrackRecord = () => {
     const [title] = useState("Track Record");
-
-    const handleAddLead = () => {
-        alert("Export btn Clicked!");
-    };
 
     return (
         <>

@@ -9,7 +9,7 @@ const DatePicker = () => {
         Flatpickr(datePickerRef.current, { dateFormat: "Y-m-d" });
     }, []);
 
-    return <input ref={datePickerRef} className="form-control" placeholder="Select a Date"/>;
+    return <input ref={datePickerRef} className="form-control form-control-solid" placeholder="Select a Date"/>;
 };
 
 export default DatePicker;

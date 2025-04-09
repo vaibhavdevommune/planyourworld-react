@@ -477,6 +477,22 @@ ul {
                     flex-direction: column;
                     gap: 24px;
                 }
+
+                .advertisements{
+                    .page-card{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px;
+                    }
+                }
+
+                .create_sales{
+                    .page-card{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px;
+                    }
+                }
             }
         }
     }
