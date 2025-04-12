@@ -3,8 +3,8 @@ import { toast } from "react-toastify";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { AnimatePresence, motion } from "framer-motion";
 
-const YouWillLearn = () => {
-  const [title] = useState("What You Will Learn");
+const NeedUs = () => {
+  const [title] = useState("Why You Need Us");
 
   const [mainTitle, setMainTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -253,4 +253,4 @@ const YouWillLearn = () => {
   );
 };
 
-export default YouWillLearn;
+export default NeedUs;

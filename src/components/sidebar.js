@@ -101,7 +101,7 @@ const Sidebar = () => {
                     <div className="menu-title">Products</div>
                 </Link>
                 
-                <Link to="/advertisements" className={`menu-link ${location.pathname === "/advertisements" || location.pathname === "/create_products" ? "active" : ""}`}>
+                <Link to="/advertisements" className={`menu-link ${location.pathname === "/advertisements" || location.pathname === "/advertisements" ? "active" : ""}`}>
                     <div className="menu-icon">
                         <span className="material-symbols-outlined">category</span>
                     </div>
@@ -113,6 +113,13 @@ const Sidebar = () => {
                         <span className="material-symbols-outlined">paid</span>
                     </div>
                     <div className="menu-title">Sales</div>
+                </Link>
+
+                <Link to="/e-book_page" className={`menu-link ${location.pathname === "/e-book_page" || location.pathname === "/create_e-book"  ? "active" : ""}`}>
+                    <div className="menu-icon">
+                        <span className="material-symbols-outlined">auto_stories</span>
+                    </div>
+                    <div className="menu-title">E-Book</div>
                 </Link>
             </div>
         </section>

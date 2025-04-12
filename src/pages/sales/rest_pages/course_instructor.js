@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import Button from "../../../components/button";
 import { AnimatePresence, motion } from "framer-motion";
 
-const YouWillLearn = () => {
-  const [title] = useState("What You Will Learn");
+const CourseInstructor = () => {
+  const [title] = useState("Course Instructor");
 
   const [mainTitle, setMainTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -19,6 +20,7 @@ const YouWillLearn = () => {
     setMainTitle("");
     setDescription("");
     setBullets([{ text: "", enabled: false }]);
+    setThumbnail(null);
     setAltTag("");
     setDesktopPosition("left");
     setUrl("");
@@ -240,11 +242,11 @@ const YouWillLearn = () => {
           </Row>
 
           <div className="d-flex justify-content-end gap-4 border-top pt-8">
-            <Button variant="secondary" className="btn-light-secondary" onClick={handleReset}>
-              Reset About Sales
+            <Button variant="btn btn-light-secondary" onClick={handleReset}>
+              Reset Form
             </Button>
-            <Button variant="primary" className="btn-light-primary" onClick={handleSubmit}>
-              Create About Sales
+            <Button className="btn btn-light-primary" onClick={handleSubmit}>
+              Save Info
             </Button>
           </div>
         </div>
@@ -253,4 +255,4 @@ const YouWillLearn = () => {
   );
 };
 
-export default YouWillLearn;
+export default CourseInstructor;

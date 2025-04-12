@@ -17,6 +17,8 @@ import Advertisements from "../pages/advertisements/index";
 import Sales from "../pages/sales/index";
 import CreateSales from "../pages/sales/create_sales";
 import AboutSales from "../pages/sales/rest_pages/about_sales";
+import EBookPage from "../pages/e-book/index";
+import CreateEBook from "../pages/e-book/create_e-book";
 
 const Mainbar = () => {
     return (
@@ -45,6 +47,8 @@ const Mainbar = () => {
                                     <Route path="/sales" element={<Sales />} />
                                     <Route path="/create_sales" element={<CreateSales />} />
                                     <Route path="/about_sales" element={<AboutSales />} />
+                                    <Route path="/e-book_page" element={<EBookPage />} />
+                                    <Route path="/create_e-book" element={<CreateEBook />} />
                                 </Routes>
                             {/* </div> */}
                         {/* </div>

@@ -4,6 +4,11 @@ import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import AboutSales from "./rest_pages/about_sales";
 import HeroSection from "./rest_pages/hero_section";
 import YouWillLearn from "./rest_pages/you_will_learn";
+import ViplavExpertise from "./rest_pages/viplav_expertise";
+import CourseInstructor from "./rest_pages/course_instructor";
+import NeedUs from "./rest_pages/need_us";
+import SalesGoals from "./rest_pages/sales_goals";
+import RegisterForm1 from "./rest_pages/register_form_1";
 import ArticlesDetails from "./rest_pages/articles_details";
 
 const CreateSales = () => {
@@ -118,19 +123,19 @@ const CreateSales = () => {
                                         <YouWillLearn />
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="ViplavExpertise" className="fade">
-                                        <ArticlesDetails />
+                                        <ViplavExpertise />
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="courseInstructor" className="fade">
-                                        <ArticlesDetails />
+                                        <CourseInstructor />
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="youNeedUs" className="fade">
-                                        <ArticlesDetails />
+                                        <NeedUs />
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="salesGoals" className="fade">
-                                        <ArticlesDetails />
+                                        <SalesGoals />
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="registerform1" className="fade">
-                                        <ArticlesDetails />
+                                        <RegisterForm1 />
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="ourexpertise" className="fade">
                                         <ArticlesDetails />

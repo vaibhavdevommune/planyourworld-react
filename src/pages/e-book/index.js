@@ -4,11 +4,11 @@ import { Container, Row, Col} from "react-bootstrap";
 import SalesDataTable from "../../components/SalesDataTable";
 
 
-const SalesPage = () => {
-    const [title] = useState("Sales Page");
+const EBookPage = () => {
+    const [title] = useState("E-Book Page");
 
     return (
-        <section className="sales-page">
+        <section className="ebook-page">
             <Container>
                 <Row className="justify-content-between">
                     <Col md={12} className="d-flex justify-content-between align-items-center">
@@ -34,7 +34,7 @@ const SalesPage = () => {
                                 Draft
                             </Link>
 
-                            <Link to='/create_sales' className="btn btn-light-success text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
+                            <Link to='/create_e-book' className="btn btn-light-success text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
                                 <span class="material-symbols-outlined fs-4">
                                     add
                                 </span>
@@ -52,4 +52,4 @@ const SalesPage = () => {
     );
 };
 
-export default SalesPage;
+export default EBookPage;
