@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav, Tab } from "react-bootstrap";
 import HeroSection from "./rest_pages/hero_section";
 import EBookContent from "./rest_pages/ebook-content";
-// import EBookPicture from "./rest_pages/ebook-picture";
-// import EBookInstructor from "./rest_pages/ebook-instructor";
-// import EBookGetAnswer from "./rest_pages/ebook-get-answer";
-// import EBookTrustedSection from "./rest_pages/ebook-trusted-section";
+import EBookPicture from "./rest_pages/ebook-picture";
+import EBookInstructor from "./rest_pages/ebook-instructor";
+import EBookGetAnswer from "./rest_pages/ebook-answer";
+import EBookTrusted from "./rest_pages/ebook-trusted";
 // import EBookLiveSessions from "./rest_pages/ebook-live-sessions";
 
 const CreateEBook = () => {
@@ -33,7 +33,7 @@ const CreateEBook = () => {
                         </Col>
                         <Col xs={12} sm={7} md={8} lg={8} className="d-flex justify-content-end">
                             <Link to='/e-book_page' className="btn btn-light-secondary text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
-                                <span class="material-symbols-outlined fs-4">
+                                <span className="material-symbols-outlined fs-4">
                                     arrow_back
                                 </span>
                                 Back
@@ -43,12 +43,12 @@ const CreateEBook = () => {
                 </Row>
 
                 <div className="mt-10 create_sales">
-                    <Tab.Container defaultActiveKey="advertise">
+                    <Tab.Container defaultActiveKey="metaSettings">
                         <Row className="left-right-tab">
                             <Col sm={3} xxl={2} className="border-end">
                                 <Nav variant="pills" className="flex-column me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                     <Nav.Item>
-                                        <Nav.Link eventKey="metaSettings" className="mb-2">
+                                        <Nav.Link eventKey="metaSettings" className="mb-2" defaultActiveKey="metaSettings">
                                             Meta Settings
                                         </Nav.Link>
                                     </Nav.Item>
@@ -57,17 +57,48 @@ const CreateEBook = () => {
                                             E-Book Content
                                         </Nav.Link>
                                     </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="ebookPicture" className="mb-2">
+                                            E-Book Picture
+                                        </Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="ebookInstructor" className="mb-2">
+                                            E-Book Instructor
+                                        </Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="ebookAnswer" className="mb-2">
+                                            E-Book Answer
+                                        </Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="ebookTrusted" className="mb-2">
+                                            E-Book Trusted
+                                        </Nav.Link>
+                                    </Nav.Item>
                                 </Nav>
                             </Col>
                             <Col sm={9} xxl={10}>
                                 <Tab.Content id="v-pills-tabContent">
-                                    <Tab.Pane eventKey="metaSettings" className="fade">
+                                    <Tab.Pane eventKey="metaSettings" className="">
                                         <HeroSection />
                                     </Tab.Pane>
-                                    <Tab.Pane eventKey="ebookContent" className="fade">
+                                    <Tab.Pane eventKey="ebookContent" className="">
                                         <EBookContent />
                                     </Tab.Pane>
-                                    
+                                    <Tab.Pane eventKey="ebookPicture" className="">
+                                        <EBookPicture />
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="ebookInstructor" className="">
+                                        <EBookInstructor />
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="ebookAnswer" className="">
+                                        <EBookGetAnswer />
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey="ebookTrusted" className="">
+                                        <EBookTrusted />
+                                    </Tab.Pane>
                                 </Tab.Content>
                             </Col>
                         </Row>

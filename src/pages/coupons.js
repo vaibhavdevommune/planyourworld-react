@@ -26,7 +26,7 @@ const Coupons = () => {
 
                         <div className="col-12 col-sm-7 col-md-7 col-lg-8 d-flex justify-content-end">
                             <Link to='/create_coupons' className="btn btn-light-success text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
-                                <span class="material-symbols-outlined fs-4">
+                                <span className="material-symbols-outlined fs-4">
                                     add
                                 </span>
                                 Create

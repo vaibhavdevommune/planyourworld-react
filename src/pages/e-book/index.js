@@ -28,14 +28,14 @@ const EBookPage = () => {
                         </Col>
                         <Col xs={12} sm={7} md={8} lg={8} className="d-flex justify-content-end gap-3">
                             <Link to='/create_sales' className="btn btn-light-secondary text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
-                                <span class="material-symbols-outlined fs-4">
+                                <span className="material-symbols-outlined fs-4">
                                     edit_square
                                 </span>
                                 Draft
                             </Link>
 
                             <Link to='/create_e-book' className="btn btn-light-success text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
-                                <span class="material-symbols-outlined fs-4">
+                                <span className="material-symbols-outlined fs-4">
                                     add
                                 </span>
                                 Create

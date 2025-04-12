@@ -35,7 +35,7 @@ const CreateSales = () => {
                         </Col>
                         <Col xs={12} sm={7} md={8} lg={8} className="d-flex justify-content-end">
                             <Link to='/sales' className="btn btn-light-secondary text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
-                                <span class="material-symbols-outlined fs-4">
+                                <span className="material-symbols-outlined fs-4">
                                     arrow_back
                                 </span>
                                 Back
@@ -45,7 +45,7 @@ const CreateSales = () => {
                 </Row>
 
                 <div className="mt-10 create_sales">
-                    <Tab.Container defaultActiveKey="advertise">
+                    <Tab.Container defaultActiveKey="aboutSales">
                         <Row className="left-right-tab">
                             <Col sm={3} xxl={2} className="border-end">
                                 <Nav variant="pills" className="flex-column me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">

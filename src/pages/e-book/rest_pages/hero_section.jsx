@@ -7,7 +7,7 @@ const HeroSection = () => {
     const [commonsection] = useState("Home Page Sections");
 
     const handleReset = () => {
-        toast.info("Meta Settings Created has been reset", {
+        toast.info(`${title} Reset has been reset`, {
             position: "top-right",
             autoClose: 1500,
             hideProgressBar: false,
@@ -18,7 +18,7 @@ const HeroSection = () => {
     };
 
     const handleSubmit = () => {
-        toast.success("Meta Settings Created successfully!", {
+        toast.success(`${title} Created successfully!`, {
             position: "top-right",
             autoClose: 1500,
             hideProgressBar: false,
@@ -88,7 +88,7 @@ const HeroSection = () => {
                             <label htmlFor="">E-Book Name</label>
                         </Col>
                         <Col sm={9}>
-                              <input type="text" className="form-control form-control-solid" placeholder="Enter E-Book Name" />
+                            <input type="text" className="form-control form-control-solid" placeholder="Enter E-Book Name" />
                         </Col>
                     </Row>
 
@@ -97,7 +97,7 @@ const HeroSection = () => {
                             <label htmlFor="">Slug</label>
                         </Col>
                         <Col sm={9}>
-                              <input type="url" className="form-control form-control-solid" placeholder="Enter Slug" />
+                            <input type="url" className="form-control form-control-solid" placeholder="Enter Slug" />
                         </Col>
                     </Row>
 
@@ -106,7 +106,7 @@ const HeroSection = () => {
                             <label htmlFor="">Meta Title (0/60)</label>
                         </Col>
                         <Col sm={9}>
-                              <input type="text" className="form-control form-control-solid" placeholder="Enter Meta Title" />
+                            <input type="text" className="form-control form-control-solid" placeholder="Enter Meta Title" />
                         </Col>
                     </Row>
 
@@ -115,7 +115,7 @@ const HeroSection = () => {
                             <label htmlFor="">Meta Description (0/160)</label>
                         </Col>
                         <Col sm={9}>
-                              <input type="text" className="form-control form-control-solid" placeholder="Enter Meta Description" />
+                            <input type="text" className="form-control form-control-solid" placeholder="Enter Meta Description" />
                         </Col>
                     </Row>
 
@@ -184,17 +184,16 @@ const HeroSection = () => {
                             variant="secondary"
                             onClick={() => handleReset(false)}
                         >
-                            Reset Meta Settings
+                            Reset {title}
                         </Button>
                         <Button
                             className="btn-light-primary"
                             variant="primary"
                             onClick={handleSubmit}
                         >
-                            Create Meta Settings
+                            Create {title}
                         </Button>
                     </div>
-
                 </div>
             </Container>
         </section>

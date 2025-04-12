@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { toast } from 'react-toastify';
-import { Container, Row, Col, Form, Button, InputGroup } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { AnimatePresence, motion } from "framer-motion";
-import TagInput from '../../../components/TagInput'
 
-const EBookContent = () => {
-    const [title] = useState("E-Book Content");
+const EBookTrusted = () => {
+    const [title] = useState("E-Book Trusted");
     const [bullets, setBullets] = useState([{ text: "", enabled: false }]);
 
     const removeBullet = (index) => {
@@ -47,11 +46,11 @@ const EBookContent = () => {
         setBullets([...bullets, { text: "", enabled: false }]);
     };
 
-    const [mediaLogo, setMediaLogo] = useState(true);
+    const [descriptionSecond, setMediaLogo] = useState(true);
 
     const handleMediaLogoToggle = () => {
-        setMediaLogo(!mediaLogo);
-        toast.success(`Media Logo is ${!mediaLogo ? 'activated' : 'deactivated'} successfully!`, {
+        setMediaLogo(!descriptionSecond);
+        toast.success(`Description Second is ${!descriptionSecond ? 'activated' : 'deactivated'} successfully!`, {
             position: "top-right",
             autoClose: 1500,
             hideProgressBar: false,
@@ -64,7 +63,14 @@ const EBookContent = () => {
         <section className="aboutsale">
             <Container>
                 <div className="page-card">
-                    <h3 className="fw-semibold">{title}</h3>
+                    <div className="d-flex align-items-center justify-content-between">
+                        <h3 className="fw-semibold mb-0">{title}</h3>
+                        <Form.Check
+                            className="form-check-success form-check-solid"
+                            type="switch"
+                            id="custom-switch-main"
+                        />
+                    </div>
 
                     <Row className="align-items-center">
                         <Col sm={3}>
@@ -72,15 +78,6 @@ const EBookContent = () => {
                         </Col>
                         <Col sm={9}>
                             <input type="text" className="form-control form-control-solid" placeholder="Enter Title" />
-                        </Col>
-                    </Row>
-
-                    <Row className="align-items-center">
-                        <Col sm={3}>
-                            <label htmlFor="">Author</label>
-                        </Col>
-                        <Col sm={9}>
-                            <input type="text" className="form-control form-control-solid" placeholder="Enter Author Name" />
                         </Col>
                     </Row>
 
@@ -98,32 +95,19 @@ const EBookContent = () => {
                             <label htmlFor="">Description Second</label>
                         </Col>
                         <Col sm={9}>
-                            <Row className="align-items-center">
-                                <Col sm={11}>
-                                    <textarea name="" id="" placeholder="Enter Description Second" className="form-control form-control-solid"></textarea>
-                                </Col>
-                                <Col sm={1}>
-                                    <Form.Check
-                                        type="switch"
-                                        id="media-logo-switch"
-                                        checked={mediaLogo}
-                                        onChange={handleMediaLogoToggle}
-                                    />
-                                </Col>
-                            </Row>
+                            <div className="d-flex align-items-center justify-content-between gap-2">
+                                <textarea name="" id="" placeholder="Enter Description Second" className="form-control form-control-solid"></textarea>
+                                <Form.Check
+                                    type="switch"
+                                    id="description-second-switch"
+                                    checked={descriptionSecond}
+                                    onChange={handleMediaLogoToggle}
+                                />
+                            </div>
                         </Col>
                     </Row>
 
-                    <Row className="align-items-center">
-                        <Col sm={3}>
-                            <label htmlFor="">What will be Covered Points</label>
-                        </Col>
-                        <Col sm={9}>
-                            <input type="text" className="form-control form-control-solid" placeholder="Enter Enter What will be Covered Points" />
-                        </Col>
-                    </Row>
-
-                    <Row className="align-items-start my-3">
+                    <Row className="align-items-start">
                         <Col sm={3}><label className="text-color">Bullet Points</label></Col>
                         <Col sm={9}>
                             <AnimatePresence>
@@ -176,55 +160,6 @@ const EBookContent = () => {
                         </Col>
                     </Row>
 
-                    <Row className="align-items-center">
-                        <Col sm={3}>
-                            <label htmlFor="">Price (Selling Price)</label>
-                        </Col>
-                        <Col sm={9}>
-                            <InputGroup>
-                                <InputGroup.Text className="border-0">₹</InputGroup.Text>
-                                <Form.Control
-                                    type="number"
-                                    className="form-control form-control-solid"
-                                    name="price"
-                                    id="product_price"
-                                    placeholder="Enter Product Price"
-                                    min="0"
-                                    required
-                                />
-                            </InputGroup>
-                        </Col>
-                    </Row>
-
-                    <Row className="align-items-center">
-                        <Col sm={3}>
-                            <label htmlFor="">Discount (Discount Price)</label>
-                        </Col>
-                        <Col sm={9}>
-                            <InputGroup>
-                                <InputGroup.Text className="border-0">₹</InputGroup.Text>
-                                <Form.Control
-                                    type="number"
-                                    className="form-control form-control-solid"
-                                    name="price"
-                                    id="discount_price"
-                                    placeholder="Enter Discount Price"
-                                    min="0"
-                                    required
-                                />
-                            </InputGroup>
-                        </Col>
-                    </Row>
-
-                    <Row className="align-items-start">
-                        <Col sm={3} className="mt-2">
-                            <label htmlFor="">Language</label>
-                        </Col>
-                        <Col sm={9}>
-                            <TagInput />
-                        </Col>
-                    </Row>
-
                     <div className="d-flex justify-content-end gap-4 border-top pt-8">
                         <Button
                             className="btn-light-secondary"
@@ -248,4 +183,4 @@ const EBookContent = () => {
     );
 };
 
-export default EBookContent;
+export default EBookTrusted;

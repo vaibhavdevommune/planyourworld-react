@@ -29,7 +29,7 @@ const Products = () => {
                         <div className="col-12 col-sm-7 col-md-7 col-lg-8 text-end">
                             <div className="d-flex align-items-center gap-3 justify-content-end">
                                 <Link to='/create_products' className="btn btn-light-success text-nowrap d-flex align-items-center justify-content-end w-fc gap-2">
-                                    <span class="material-symbols-outlined fs-4">
+                                    <span className="material-symbols-outlined fs-4">
                                         add
                                     </span>
                                     Create

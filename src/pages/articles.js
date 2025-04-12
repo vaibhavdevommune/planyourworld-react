@@ -57,7 +57,7 @@ const Articles = () => {
 
                                 <div className="col-1">
                                     <Button text="Create" onClick={handleAddLead} className="btn btn-light-success text-nowrap d-flex align-items-center gap-2" hidden>
-                                        <span class="material-symbols-outlined fs-4">
+                                        <span className="material-symbols-outlined fs-4">
                                             add
                                         </span>
                                     </Button>
